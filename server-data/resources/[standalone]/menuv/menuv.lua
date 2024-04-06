@@ -1813,7 +1813,7 @@ function CreateMenu(info)
     ---@field public Texture string Name of texture example: "default"
     ---@field public Dictionary string Name of dictionary example: "menuv"
     ---@field public Color table<string, number> Color of Menu
-    ---@field private Events table<string, fun[]> List of registered `on` events
+    ---@field private Events table<string, fun()> List of registered `on` events
     ---@field public Items Item[] List of items
     ---@field public Trigger fun(t: Item, event: string)
     ---@field public On fun(t: Menu, event: string, func: function|Menu): string
@@ -1836,6 +1836,7 @@ function CreateMenu(info)
     ---@field public Close fun(t: Menu)
     ---@field public ToTable fun(t: Menu):table
     local menu = setmetatable({ data = item, __class = 'Menu', __type = 'Menu' }, mt)
+
 
     menu.Items(function(items, trigger, key, index, value, oldValue)
         menu:Trigger(trigger, key, index, value, oldValue)

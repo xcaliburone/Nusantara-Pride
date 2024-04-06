@@ -14,7 +14,12 @@
         "missing-return-value",
         "return-type-mismatch",
         "missing-return",
-        "duplicate-index"
+        "duplicate-index",
+        "unbalanced-assignments",
+        "invisible",
+        "duplicate-doc-field",
+        "assign-type-mismatch",
+        "redundant-return-value"
     ],
     "Lua.diagnostics.globals": [
         "moneyFountains",
