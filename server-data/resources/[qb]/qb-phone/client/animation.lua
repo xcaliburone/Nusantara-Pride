@@ -1,5 +1,5 @@
 local phoneProp = 0
-local phoneModel = `prop_npc_phone_02`
+local phoneModel = "prop_npc_phone_02"
 
 local function LoadAnimation(dict)
 	RequestAnimDict(dict)
@@ -30,7 +30,7 @@ function newPhoneProp()
 	phoneProp = CreateObject(phoneModel, 1.0, 1.0, 1.0, 1, 1, 0)
 
 	local bone = GetPedBoneIndex(PlayerPedId(), 28422)
-	if phoneModel == `prop_cs_phone_01` then
+	if phoneModel == "prop_cs_phone_01" then
 		AttachEntityToEntity(phoneProp, PlayerPedId(), bone, 0.0, 0.0, 0.0, 50.0, 320.0, 50.0, 1, 1, 0, 0, 2, 1)
 	else
 		AttachEntityToEntity(phoneProp, PlayerPedId(), bone, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1, 1, 0, 0, 2, 1)

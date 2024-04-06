@@ -24,7 +24,7 @@ end)
 RegisterNetEvent('qb-shops:server:UpdateShopItems', function(shop, itemData, amount)
     if not Config.UseTruckerJob then return end
     if not shop or not itemData or not amount then return end
-    Config.Locations[shop].products[itemData.slot].amount -= amount
+    Config.Locations[shop].products[itemData.slot].amount = Config.Locations[shop].products[itemData.slot].amount - amount
     if Config.Locations[shop].products[itemData.slot].amount < 0 then
         Config.Locations[shop].products[itemData.slot].amount = 0
     end
@@ -36,7 +36,7 @@ RegisterNetEvent('qb-shops:server:RestockShopItems', function(shop)
     if not shop or not Config.Locations[shop].products then return end
     local randAmount = math.random(10, 50)
     for k in pairs(Config.Locations[shop].products) do
-        Config.Locations[shop].products[k].amount += randAmount
+        Config.Locations[shop].products[k].amount = Config.Locations[shop].products[k].amount + randAmount
     end
     TriggerEvent('qb-shops:server:SaveShopInv')
     TriggerClientEvent('qb-shops:client:RestockShopItems', -1, shop, randAmount)

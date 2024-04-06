@@ -178,7 +178,7 @@ CreateThread(function()
                     end
                 end
 
-                SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
+                SetCurrentPedWeapon(ped, "WEAPON_UNARMED", true)
             elseif InLaststand then
                 sleep = 5
 

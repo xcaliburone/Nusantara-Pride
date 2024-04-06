@@ -41,7 +41,7 @@ end
 local function setClosestStretcher()
     local ped = PlayerPedId()
     local coords = GetEntityCoords(ped)
-    local object = GetClosestObjectOfType(coords.x, coords.y, coords.z, 10.0, `prop_ld_binbag_01`, false, false, false)
+    local object = GetClosestObjectOfType(coords.x, coords.y, coords.z, 10.0, "prop_ld_binbag_01", false, false, false)
     if object ~= 0 then
         stretcherObject = object
     end
@@ -152,7 +152,7 @@ RegisterNetEvent('qb-radialmenu:client:TakeStretcher', function()
         while not HasModelLoaded("prop_ld_binbag_01") do
             Wait(0)
         end
-        local obj = CreateObject(`prop_ld_binbag_01`, GetEntityCoords(PlayerPedId()), true)
+        local obj = CreateObject("prop_ld_binbag_01", GetEntityCoords(PlayerPedId()), true)
         if obj ~= 0 then
             SetEntityRotation(obj, 0.0, 0.0, GetEntityHeading(vehicle), false, false)
             FreezeEntityPosition(obj, true)
@@ -369,7 +369,7 @@ CreateThread(function()
     Wait(1000)
     local ped = PlayerPedId()
     local pos = GetEntityCoords(ped)
-    local object = GetClosestObjectOfType(pos.x, pos.y, pos.z, 5.0, `prop_ld_binbag_01`, false, false, false)
+    local object = GetClosestObjectOfType(pos.x, pos.y, pos.z, 5.0, "prop_ld_binbag_01", false, false, false)
     if object ~= 0 then
         DeleteObject(object)
         ClearPedTasksImmediately(ped)

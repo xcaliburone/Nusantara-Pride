@@ -1,0 +1,42 @@
+{
+    "Lua.diagnostics.disable": [
+        "undefined-global",
+        "need-check-nil",
+        "undefined-field",
+        "cast-local-type",
+        "param-type-mismatch",
+        "deprecated",
+        "redundant-parameter",
+        "missing-parameter",
+        "undefined-doc-name",
+        "duplicate-set-field",
+        "undefined-doc-param",
+        "missing-return-value",
+        "return-type-mismatch",
+        "missing-return",
+        "duplicate-index"
+    ],
+    "Lua.diagnostics.globals": [
+        "moneyFountains",
+        "deathTime",
+        "isDead",
+        "emsNotified",
+        "isLoggedIn",
+        "currentThermiteGate",
+        "openLocker",
+        "moneyCalc",
+        "startMission",
+        "stopAndBeAngry",
+        "disableProximityCycle",
+        "setProximityState",
+        "mode",
+        "closeMenuFull",
+        "setupTarget",
+        "createNpcPickUpLocation",
+        "createNpcDelieveryLocation",
+        "callNpcPoly",
+        "dropNpcPoly",
+        "setupCabParkingLocation",
+        "jailTime"
+    ]
+}

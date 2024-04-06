@@ -66,7 +66,7 @@ local function whitelistedVehicle()
         end
     end
 
-    if veh == `dynasty` then
+    if veh == "dynasty" then
         retval = true
     end
 

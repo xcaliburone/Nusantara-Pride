@@ -30,7 +30,7 @@ local function HasItem(items, amount)
     local kvIndex = 2
     if isTable and not isArray then
         totalItems = 0
-        for _ in pairs(items) do totalItems += 1 end
+        for _ in pairs(items) do totalItems = totalItems + 1 end
         kvIndex = 1
     end
     for _, itemData in pairs(PlayerData.items) do
@@ -38,7 +38,7 @@ local function HasItem(items, amount)
             for k, v in pairs(items) do
                 local itemKV = { k, v }
                 if itemData and itemData.name == itemKV[kvIndex] and ((amount and itemData.amount >= amount) or (not isArray and itemData.amount >= v) or (not amount and isArray)) then
-                    count += 1
+                    count = count + 1
                 end
             end
             if count == totalItems then
@@ -557,7 +557,7 @@ RegisterNetEvent('inventory:client:UseWeapon', function(weaponData, shootbool)
     local weaponHash = joaat(weaponData.name)
     if currentWeapon == weaponName then
         TriggerEvent('weapons:client:DrawWeapon', nil)
-        SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
+        SetCurrentPedWeapon(ped, "WEAPON_UNARMED", true)
         RemoveAllPedWeapons(ped, true)
         TriggerEvent('weapons:client:SetCurrentWeapon', nil, shootbool)
         currentWeapon = nil
@@ -607,7 +607,7 @@ RegisterNetEvent('inventory:client:CheckWeapon', function(weaponName)
     if currentWeapon ~= weaponName:lower() then return end
     local ped = PlayerPedId()
     TriggerEvent('weapons:ResetHolster')
-    SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
+    SetCurrentPedWeapon(ped, "WEAPON_UNARMED", true)
     RemoveAllPedWeapons(ped, true)
     currentWeapon = nil
 end)

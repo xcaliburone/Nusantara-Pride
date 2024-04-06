@@ -78,7 +78,7 @@ local function OpenPacificDoor()
         CreateThread(function()
             while entHeading > Config.BigBanks["pacific"]["heading"].open do
                 SetEntityHeading(object, entHeading - 10)
-                entHeading -= 0.5
+                entHeading = entHeading - 0.5
                 Wait(10)
             end
         end)
@@ -105,7 +105,7 @@ local function OpenBankDoor(bankId)
         CreateThread(function()
             while entHeading ~= Config.SmallBanks[bankId]["heading"].open do
                 SetEntityHeading(object, entHeading - 10)
-                entHeading -= 0.5
+                entHeading = entHeading - 0.5
                 Wait(10)
             end
         end)
@@ -126,7 +126,7 @@ function openLocker(bankId, lockerId) -- Globally Used
         if hasItem then
             loadAnimDict("anim@heists@fleeca_bank@drilling")
             TaskPlayAnim(ped, 'anim@heists@fleeca_bank@drilling', 'drill_straight_idle', 3.0, 3.0, -1, 1, 0, false, false, false)
-            local DrillObject = CreateObject(`hei_prop_heist_drill`, pos.x, pos.y, pos.z, true, true, true)
+            local DrillObject = CreateObject("hei_prop_heist_drill", pos.x, pos.y, pos.z, true, true, true)
             AttachEntityToEntity(DrillObject, ped, GetPedBoneIndex(ped, 57005), 0.14, 0, -0.01, 90.0, -90.0, 180.0, true, true, false, true, 1, true)
             IsDrilling = true
             QBCore.Functions.Progressbar("open_locker_drill", Lang:t("general.breaking_open_safe"), math.random(18000, 30000), false, true, {
@@ -164,7 +164,7 @@ function openLocker(bankId, lockerId) -- Globally Used
         if hasItem then
             loadAnimDict("anim@heists@fleeca_bank@drilling")
             TaskPlayAnim(ped, 'anim@heists@fleeca_bank@drilling', 'drill_straight_idle', 3.0, 3.0, -1, 1, 0, false, false, false)
-            local DrillObject = CreateObject(`hei_prop_heist_drill`, pos.x, pos.y, pos.z, true, true, true)
+            local DrillObject = CreateObject("hei_prop_heist_drill", pos.x, pos.y, pos.z, true, true, true)
             AttachEntityToEntity(DrillObject, ped, GetPedBoneIndex(ped, 57005), 0.14, 0, -0.01, 90.0, -90.0, 180.0, true, true, false, true, 1, true)
             IsDrilling = true
             QBCore.Functions.Progressbar("open_locker_drill", Lang:t("general.breaking_open_safe"), math.random(18000, 30000), false, true, {

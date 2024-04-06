@@ -1,6 +1,6 @@
 Config = {}
 
-Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
+Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add "setr UseTarget true" to use this and just that from true to false or the other way around)
 Config.PauseMapText = ''                                     -- Text shown above the map when ESC is pressed. If left empty 'FiveM' will appear
 Config.HarnessUses = 20
 Config.DamageNeeded = 100.0                                  -- amount of damage till you can push your vehicle. 0-1000
@@ -157,71 +157,71 @@ Config.BlacklistedScenarios = {
         2017590552,
         2141866469,
         1409640232,
-        `ng_planes`
+        "ng_planes"
     }
 }
 
 Config.BlacklistedVehs = {
-    [`shamal`] = true,
-    [`luxor`] = true,
-    [`luxor2`] = true,
-    [`jet`] = true,
-    [`lazer`] = true,
-    [`buzzard`] = true,
-    [`buzzard2`] = true,
-    [`annihilator`] = true,
-    [`savage`] = true,
-    [`titan`] = true,
-    [`rhino`] = true,
-    [`firetruck`] = true,
-    [`mule`] = true,
-    [`maverick`] = true,
-    [`blimp`] = true,
-    [`airtug`] = true,
-    [`camper`] = true,
-    [`hydra`] = true,
-    [`oppressor`] = true,
-    [`technical3`] = true,
-    [`insurgent3`] = true,
-    [`apc`] = true,
-    [`tampa3`] = true,
-    [`trailersmall2`] = true,
-    [`halftrack`] = true,
-    [`hunter`] = true,
-    [`vigilante`] = true,
-    [`akula`] = true,
-    [`barrage`] = true,
-    [`khanjali`] = true,
-    [`caracara`] = true,
-    [`blimp3`] = true,
-    [`menacer`] = true,
-    [`oppressor2`] = true,
-    [`scramjet`] = true,
-    [`strikeforce`] = true,
-    [`cerberus`] = true,
-    [`cerberus2`] = true,
-    [`cerberus3`] = true,
-    [`scarab`] = true,
-    [`scarab2`] = true,
-    [`scarab3`] = true,
-    [`rrocket`] = true,
-    [`ruiner2`] = true,
-    [`deluxo`] = true,
-    [`cargoplane2`] = true,
-    [`voltic2`] = true
+    ["shamal"] = true,
+    ["luxor"] = true,
+    ["luxor2"] = true,
+    ["jet"] = true,
+    ["lazer"] = true,
+    ["buzzard"] = true,
+    ["buzzard2"] = true,
+    ["annihilator"] = true,
+    ["savage"] = true,
+    ["titan"] = true,
+    ["rhino"] = true,
+    ["firetruck"] = true,
+    ["mule"] = true,
+    ["maverick"] = true,
+    ["blimp"] = true,
+    ["airtug"] = true,
+    ["camper"] = true,
+    ["hydra"] = true,
+    ["oppressor"] = true,
+    ["technical3"] = true,
+    ["insurgent3"] = true,
+    ["apc"] = true,
+    ["tampa3"] = true,
+    ["trailersmall2"] = true,
+    ["halftrack"] = true,
+    ["hunter"] = true,
+    ["vigilante"] = true,
+    ["akula"] = true,
+    ["barrage"] = true,
+    ["khanjali"] = true,
+    ["caracara"] = true,
+    ["blimp3"] = true,
+    ["menacer"] = true,
+    ["oppressor2"] = true,
+    ["scramjet"] = true,
+    ["strikeforce"] = true,
+    ["cerberus"] = true,
+    ["cerberus2"] = true,
+    ["cerberus3"] = true,
+    ["scarab"] = true,
+    ["scarab2"] = true,
+    ["scarab3"] = true,
+    ["rrocket"] = true,
+    ["ruiner2"] = true,
+    ["deluxo"] = true,
+    ["cargoplane2"] = true,
+    ["voltic2"] = true
 }
 
 Config.BlacklistedWeapons = {
-    [`WEAPON_RAILGUN`] = true,
+    ["WEAPON_RAILGUN"] = true,
 }
 
 Config.BlacklistedPeds = {
-    [`s_m_y_ranger_01`] = true,
-    [`s_m_y_sheriff_01`] = true,
-    [`s_m_y_cop_01`] = true,
-    [`s_f_y_sheriff_01`] = true,
-    [`s_f_y_cop_01`] = true,
-    [`s_m_y_hwaycop_01`] = true
+    ["s_m_y_ranger_01"] = true,
+    ["s_m_y_sheriff_01"] = true,
+    ["s_m_y_cop_01"] = true,
+    ["s_f_y_sheriff_01"] = true,
+    ["s_f_y_cop_01"] = true,
+    ["s_m_y_hwaycop_01"] = true
 }
 
 Config.WeapDraw = {

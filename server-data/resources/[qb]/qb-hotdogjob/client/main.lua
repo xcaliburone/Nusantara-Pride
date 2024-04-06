@@ -253,7 +253,7 @@ local function PrepareAnim()
     local ped = PlayerPedId()
     LoadAnim('amb@prop_human_bbq@male@idle_a')
     TaskPlayAnim(ped, 'amb@prop_human_bbq@male@idle_a', 'idle_b', 6.0, -6.0, -1, 47, 0, 0, 0, 0)
-    SpatelObject = CreateObject(`prop_fish_slice_01`, 0, 0, 0, true, true, true)
+    SpatelObject = CreateObject("prop_fish_slice_01", 0, 0, 0, true, true, true)
     AttachEntityToEntity(SpatelObject, ped, GetPedBoneIndex(ped, 57005), 0.08, 0.0, -0.02, 0.0, -25.0, 130.0, true, true, false, true, 1, true)
     PreparingAnimCheck()
 end
@@ -314,7 +314,7 @@ local function HotdogLoop()
         while true do
             local PlayerPed = PlayerPedId()
             local PlayerPos = GetEntityCoords(PlayerPed)
-            local ClosestObject = GetClosestObjectOfType(PlayerPos.x, PlayerPos.y, PlayerPos.z, 3.0, `prop_hotdogstand_01`, 0, 0, 0)
+            local ClosestObject = GetClosestObjectOfType(PlayerPos.x, PlayerPos.y, PlayerPos.z, 3.0, "prop_hotdogstand_01", 0, 0, 0)
 
             if StandObject ~= nil then
                 if ClosestObject ~= nil and ClosestObject == StandObject then
@@ -372,7 +372,7 @@ local function HotdogLoop()
         while true do
             local PlayerPed = PlayerPedId()
             local PlayerPos = GetEntityCoords(PlayerPed)
-            local ClosestObject = GetClosestObjectOfType(PlayerPos.x, PlayerPos.y, PlayerPos.z, 3.0, `prop_hotdogstand_01`, 0, 0, 0)
+            local ClosestObject = GetClosestObjectOfType(PlayerPos.x, PlayerPos.y, PlayerPos.z, 3.0, "prop_hotdogstand_01", 0, 0, 0)
 
             if StandObject ~= nil then
                 if ClosestObject ~= nil and ClosestObject == StandObject then
@@ -407,7 +407,7 @@ local function StartWorking()
                 local SpawnCoords = Config.Locations['spawn'].coords
                 IsWorking = true
                 LoadModel('prop_hotdogstand_01')
-                StandObject = CreateObject(`prop_hotdogstand_01`, SpawnCoords.x, SpawnCoords.y, SpawnCoords.z, true)
+                StandObject = CreateObject("prop_hotdogstand_01", SpawnCoords.x, SpawnCoords.y, SpawnCoords.z, true)
                 PlaceObjectOnGroundProperly(StandObject)
                 SetEntityHeading(StandObject, SpawnCoords.w - 90)
                 FreezeEntityPosition(StandObject, true)
@@ -468,7 +468,7 @@ local function StartWorking()
                 local SpawnCoords = Config.Locations['spawn'].coords
                 IsWorking = true
                 LoadModel('prop_hotdogstand_01')
-                StandObject = CreateObject(`prop_hotdogstand_01`, SpawnCoords.x, SpawnCoords.y, SpawnCoords.z, true)
+                StandObject = CreateObject("prop_hotdogstand_01", SpawnCoords.x, SpawnCoords.y, SpawnCoords.z, true)
                 PlaceObjectOnGroundProperly(StandObject)
                 SetEntityHeading(StandObject, SpawnCoords.w - 90)
                 FreezeEntityPosition(StandObject, true)
@@ -682,7 +682,7 @@ local function SellToPed(ped)
                                     AnimPlayed = true
                                 end
                                 if HotdogObject == nil then
-                                    HotdogObject = CreateObject(`prop_cs_hotdog_01`, 0, 0, 0, true, true, true)
+                                    HotdogObject = CreateObject("prop_cs_hotdog_01", 0, 0, 0, true, true, true)
                                 end
                                 AttachEntityToEntity(HotdogObject, Myped, GetPedBoneIndex(Myped, 57005), 0.12, 0.0, -0.05, 220.0, 120.0, 0.0, true, true, false, true, 1, true)
                                 SetTimeout(1250, function()
@@ -832,7 +832,7 @@ end)
 RegisterNetEvent('qb-hotdogjob:staff:DeletStand', function()
     local ped = PlayerPedId()
     local pos = GetEntityCoords(ped)
-    local Object = GetClosestObjectOfType(pos.x, pos.y, pos.z, 10.0, `prop_hotdogstand_01`, true, false, false)
+    local Object = GetClosestObjectOfType(pos.x, pos.y, pos.z, 10.0, "prop_hotdogstand_01", true, false, false)
 
     if Object ~= nil then
         local ObjectCoords = GetEntityCoords(Object)

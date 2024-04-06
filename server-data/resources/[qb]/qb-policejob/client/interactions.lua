@@ -375,8 +375,8 @@ RegisterNetEvent('police:client:GetCuffed', function(playerId, isSoftcuff)
         isHandcuffed = true
         TriggerServerEvent('police:server:SetHandcuffStatus', true)
         ClearPedTasksImmediately(ped)
-        if GetSelectedPedWeapon(ped) ~= `WEAPON_UNARMED` then
-            SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
+        if GetSelectedPedWeapon(ped) ~= "WEAPON_UNARMED" then
+            SetCurrentPedWeapon(ped, "WEAPON_UNARMED", true)
         end
         if not isSoftcuff then
             cuffType = 16

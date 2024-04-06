@@ -125,7 +125,7 @@ RegisterNUICallback('thermitesuccess', function(_, cb)
             while time > 0 do
                 QBCore.Functions.Notify(Lang:t("general.thermite_detonating_in_seconds", {time = time}))
                 Wait(1000)
-                time -= 1
+                time = time - 1
             end
             local randTime = math.random(10000, 15000)
             CreateFire(coords, randTime)

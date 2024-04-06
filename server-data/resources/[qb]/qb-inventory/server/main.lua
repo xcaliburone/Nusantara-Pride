@@ -103,7 +103,7 @@ local function GetTotalWeight(items)
 	local weight = 0
 	if not items then return 0 end
 	for _, item in pairs(items) do
-		weight += item.weight * item.amount
+		weight = weight + item.weight * item.amount
 	end
 	return tonumber(weight)
 end
@@ -421,7 +421,7 @@ local function HasItem(source, items, amount)
 	local kvIndex = 2
 	if isTable and not isArray then
 		totalItems = 0
-		for _ in pairs(items) do totalItems += 1 end
+		for _ in pairs(items) do totalItems = otalItems + 1 end
 		kvIndex = 1
 	end
 	if isTable then
@@ -429,7 +429,7 @@ local function HasItem(source, items, amount)
 			local itemKV = { k, v }
 			local item = GetItemByName(source, itemKV[kvIndex])
 			if item and ((amount and item.amount >= amount) or (not isArray and item.amount >= v) or (not amount and isArray)) then
-				count += 1
+				count = count + 1
 			end
 		end
 		if count == totalItems then
@@ -2311,7 +2311,7 @@ QBCore.Functions.CreateCallback('QBCore:HasItem', function(source, cb, items, am
 	local kvIndex = 2
 	if isTable and not isArray then
 		totalItems = 0
-		for _ in pairs(items) do totalItems += 1 end
+		for _ in pairs(items) do totalItems = totalItems + 1 end
 		kvIndex = 1
 	end
 	if isTable then
@@ -2319,7 +2319,7 @@ QBCore.Functions.CreateCallback('QBCore:HasItem', function(source, cb, items, am
 			local itemKV = { k, v }
 			local item = GetItemByName(source, itemKV[kvIndex])
 			if item and ((amount and item.amount >= amount) or (not amount and not isArray and item.amount >= v) or (not amount and isArray)) then
-				count += 1
+				count = count + 1
 			end
 		end
 		if count == totalItems then

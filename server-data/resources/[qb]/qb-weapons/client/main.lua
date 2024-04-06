@@ -135,12 +135,12 @@ CreateThread(function()
                         if weapon and weapon ~= 0 and QBCore.Shared.Weapons[weapon] then
                             QBCore.Functions.TriggerCallback('prison:server:checkThrowable', function(result)
                                 if result or GetAmmoInPedWeapon(ped, weapon) <= 0 then return end
-                                MultiplierAmount += 1
+                                MultiplierAmount = MultiplierAmount + 1
                             end, weapon)
                             Wait(200)
                         end
                     else
-                        if weapon ~= `WEAPON_UNARMED` then
+                        if weapon ~= "WEAPON_UNARMED" then
                             TriggerEvent('inventory:client:CheckWeapon', QBCore.Shared.Weapons[weapon]['name'])
                             QBCore.Functions.Notify(Lang:t('error.weapon_broken'), 'error')
                             MultiplierAmount = 0

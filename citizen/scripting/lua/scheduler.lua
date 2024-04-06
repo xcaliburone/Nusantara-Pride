@@ -65,7 +65,7 @@ json.setoption('with_hole', true)
 local _in = Citizen.InvokeNative
 
 local function FormatStackTrace()
-	return _in(`FORMAT_STACK_TRACE` & 0xFFFFFFFF, nil, 0, Citizen.ResultAsString())
+	return _in("FORMAT_STACK_TRACE" & 0xFFFFFFFF, nil, 0, Citizen.ResultAsString())
 end
 
 local boundaryIdx = 1

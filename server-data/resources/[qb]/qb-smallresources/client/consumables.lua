@@ -31,7 +31,7 @@ local function healOxy()
     local count = 9
     while count > 0 do
         Wait(1000)
-        count -= 1
+        count = count - 1
         SetEntityHealth(PlayerPedId(), GetEntityHealth(PlayerPedId()) + 6)
     end
     healing = false
@@ -70,7 +70,7 @@ local function ecstasyEffect()
     SetFlash(0, 0, 500, 7000, 500)
     while startStamina > 0 do
         Wait(1000)
-        startStamina -= 1
+        startStamina = startStamina - 1
         RestorePlayerStamina(PlayerId(), 1.0)
         if math.random(1, 100) < 51 then
             SetFlash(0, 0, 500, 7000, 500)
@@ -103,7 +103,7 @@ local function crackBaggyEffect()
         if math.random(1, 100) < 10 then
             RestorePlayerStamina(PlayerId(), 1.0)
         end
-        startStamina -= 1
+        startStamina = startStamina - 1
         if math.random(1, 100) < 60 and IsPedRunning(ped) then
             SetPedToRagdoll(ped, math.random(1000, 2000), math.random(1000, 2000), 3, false, false, false)
         end
@@ -127,7 +127,7 @@ local function cokeBaggyEffect()
         if math.random(1, 100) < 20 then
             RestorePlayerStamina(PlayerId(), 1.0)
         end
-        startStamina -= 1
+        startStamina = startStamina - 1
         if math.random(1, 100) < 10 and IsPedRunning(ped) then
             SetPedToRagdoll(ped, math.random(1000, 3000), math.random(1000, 3000), 3, false, false, false)
         end
@@ -207,7 +207,7 @@ RegisterNetEvent('consumables:client:DrinkAlcohol', function(itemName)
         TriggerServerEvent('consumables:server:drinkAlcohol', itemName)
         TriggerServerEvent('consumables:server:addThirst', QBCore.Functions.GetPlayerData().metadata.thirst + Config.Consumables.alcohol[itemName])
         TriggerServerEvent('hud:server:RelieveStress', math.random(2, 4))
-        alcoholCount += 1
+        alcoholCount = alcoholCount + 1
         AlcoholLoop()
         if alcoholCount > 1 and alcoholCount < 4 then
             TriggerEvent('evidence:client:SetStatus', 'alcohol', 200)
@@ -242,7 +242,7 @@ RegisterNetEvent('consumables:client:Custom', function(itemName)
                 TriggerServerEvent('consumables:server:add' .. data.replenish.type, QBCore.Functions.GetPlayerData().metadata[string.lower(data.replenish.type)] + data.replenish.replenish)
             end
             if data.replenish.isAlcohol then
-                alcoholCount += 1
+                alcoholCount = alcoholCount + 1
                 AlcoholLoop()
                 if alcoholCount > 1 and alcoholCount < 4 then
                     TriggerEvent('evidence:client:SetStatus', 'alcohol', 200)
@@ -397,7 +397,7 @@ RegisterNetEvent('consumables:client:UseParachute', function()
     }, {}, {}, {}, function() -- Done
         local ped = PlayerPedId()
         TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['parachute'], 'remove')
-        GiveWeaponToPed(ped, `GADGET_PARACHUTE`, 1, false, false)
+        GiveWeaponToPed(ped, "GADGET_PARACHUTE", 1, false, false)
         local parachuteData = {
             outfitData = { ['bag'] = { item = 7, texture = 0 } } -- Adding Parachute Clothing
         }
@@ -518,7 +518,7 @@ function AlcoholLoop()
                 Wait(10)
                 if alcoholCount > 0 then
                     Wait(1000 * 60 * 15)
-                    alcoholCount -= 1
+                    alcoholCount = alcoholCount - 1
                 else
                     looped = false
                     break

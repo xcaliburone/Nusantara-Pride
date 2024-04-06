@@ -24,11 +24,11 @@ local function TableLoopStations(toLoop)
         if type(station) == 'table' then
             local hits2 = 0
             for _, station2 in pairs(station) do
-                if Config.PowerStations[station2].hit then hits2 += 1 end
+                if Config.PowerStations[station2].hit then hits2 = hits2 + 1 end
                 if hits2 == #station then return true end
             end
         else
-            if Config.PowerStations[station].hit then hits += 1 end
+            if Config.PowerStations[station].hit then hits = hits + 1 end
             if hits == #toLoop then return true end
         end
     end
@@ -99,7 +99,7 @@ local function AllStationsHit()
     local hit = 0
     for k in pairs(Config.PowerStations) do
         if Config.PowerStations[k].hit then
-            hit += 1
+            hit = hit + 1
         end
     end
     return hit >= Config.HitsNeeded

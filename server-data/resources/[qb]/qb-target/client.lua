@@ -78,16 +78,16 @@ local function DrawTarget()
 			for _, zone in pairs(listSprite) do
 				sleep = 0
 
-				r = zone.targetoptions.drawColor?[1] or Config.DrawColor[1]
-				g = zone.targetoptions.drawColor?[2] or Config.DrawColor[2]
-				b = zone.targetoptions.drawColor?[3] or Config.DrawColor[3]
-				a = zone.targetoptions.drawColor?[4] or Config.DrawColor[4]
+				r = zone.targetoptions.drawColor and zone.targetoptions.drawColor[1] or Config.DrawColor[1]
+				g = zone.targetoptions.drawColor and zone.targetoptions.drawColor[2] or Config.DrawColor[2]
+				b = zone.targetoptions.drawColor and zone.targetoptions.drawColor[3] or Config.DrawColor[3]
+				a = zone.targetoptions.drawColor and zone.targetoptions.drawColor[4] or Config.DrawColor[4]
 
 				if zone.success then
-					r = zone.targetoptions.successDrawColor?[1] or Config.SuccessDrawColor[1]
-					g = zone.targetoptions.successDrawColor?[2] or Config.SuccessDrawColor[2]
-					b = zone.targetoptions.successDrawColor?[3] or Config.SuccessDrawColor[3]
-					a = zone.targetoptions.successDrawColor?[4] or Config.SuccessDrawColor[4]
+					r = zone.targetoptions.successDrawColor and zone.targetoptions.successDrawColor[1] or Config.SuccessDrawColor[1]
+					g = zone.targetoptions.successDrawColor and zone.targetoptions.successDrawColor[2] or Config.SuccessDrawColor[2]
+					b = zone.targetoptions.successDrawColor and zone.targetoptions.successDrawColor[3] or Config.SuccessDrawColor[3]
+					a = zone.targetoptions.successDrawColor and zone.targetoptions.successDrawColor[4] or Config.SuccessDrawColor[4]
 				end
 
 				SetDrawOrigin(zone.center.x, zone.center.y, zone.center.z, 0)
@@ -390,7 +390,7 @@ local function EnableTarget()
 					if data and next(data) then CheckEntity(flag, data, entity, distance) end
 				end
 			else
-				sleep += 20
+				sleep = sleep + 20
 			end
 			if not success then
 				-- Zone targets
@@ -436,14 +436,14 @@ local function EnableTarget()
 						DrawOutlineEntity(entity, false)
 					end
 				else
-					sleep += 20
+					sleep = sleep + 20
 				end
 			else
 				LeftTarget()
 				DrawOutlineEntity(entity, false)
 			end
 		else
-			sleep += 20
+			sleep = sleep + 20
 		end
 		Wait(sleep)
 	end

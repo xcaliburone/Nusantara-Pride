@@ -952,7 +952,7 @@ function Notify(message, color) -- However you want your notifications to be sho
 end
 
 function IsMpPed(ped)
-	local male = `mp_m_freemode_01` local female = `mp_f_freemode_01`
+	local male = "mp_m_freemode_01" local female = "mp_f_freemode_01"
 	local CurrentModel = GetEntityModel(ped)
 	if CurrentModel == male then return "male" elseif CurrentModel == female then return "female" else return false end
 end

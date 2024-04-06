@@ -69,7 +69,7 @@ local function startFirework(asset, coords)
         fireworkText()
         while fireworkTime > 0 do
             Wait(1000)
-            fireworkTime -= 1
+            fireworkTime = fireworkTime - 1
         end
         UseParticleFxAssetNextCall("scr_indep_fireworks")
         for _ = 1, math.random(5, 10), 1 do

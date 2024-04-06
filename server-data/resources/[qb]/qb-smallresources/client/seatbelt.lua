@@ -50,7 +50,7 @@ end
 
 local function resetHandBrake()
     if handbrake <= 0 then return end
-    handbrake -= 1
+    handbrake = handbrake - 1
 end
 
 function SeatBeltLoop()
@@ -118,7 +118,7 @@ RegisterNetEvent('QBCore:Client:EnteredVehicle', function()
                                 if not harnessOn then
                                     ejectFromVehicle()
                                 else
-                                    harnessHp -= 1
+                                    harnessHp = harnessHp - 1
                                     TriggerServerEvent('seatbelt:DoHarnessDamage', harnessHp, harnessData)
                                 end
                             end
@@ -128,7 +128,7 @@ RegisterNetEvent('QBCore:Client:EnteredVehicle', function()
                                     if not harnessOn then
                                         ejectFromVehicle()
                                     else
-                                        harnessHp -= 1
+                                        harnessHp = harnessHp - 1
                                         TriggerServerEvent('seatbelt:DoHarnessDamage', harnessHp, harnessData)
                                     end
                                 end
@@ -140,7 +140,7 @@ RegisterNetEvent('QBCore:Client:EnteredVehicle', function()
                                 if not harnessOn then
                                     ejectFromVehicle()
                                 else
-                                    harnessHp -= 1
+                                    harnessHp = harnessHp - 1
                                     TriggerServerEvent('seatbelt:DoHarnessDamage', harnessHp, harnessData)
                                 end
                             end
@@ -150,7 +150,7 @@ RegisterNetEvent('QBCore:Client:EnteredVehicle', function()
                                     if not harnessOn then
                                         ejectFromVehicle()
                                     else
-                                        harnessHp -= 1
+                                        harnessHp = harnessHp - 1
                                         TriggerServerEvent('seatbelt:DoHarnessDamage', harnessHp, harnessData)
                                     end
                                 end
@@ -172,7 +172,7 @@ RegisterNetEvent('QBCore:Client:EnteredVehicle', function()
             end
             frameBodyChange = newVehBodyHealth - currVehBodyHealth
             if tick > 0 then
-                tick -= 1
+                tick = tick - 1
                 if tick == 1 then
                     lastFrameVehSpeed = GetEntitySpeed(currVehicle) * 3.6
                 end

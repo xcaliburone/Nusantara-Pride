@@ -94,7 +94,7 @@ local function GetCurrentCops()
     local players = QBCore.Functions.GetQBPlayers()
     for _, v in pairs(players) do
         if v and v.PlayerData.job.type == 'leo' and v.PlayerData.job.onduty then
-            amount += 1
+            amount = amount + 1
         end
     end
     return amount
@@ -1022,7 +1022,7 @@ RegisterNetEvent('police:server:UpdateCurrentCops', function()
     updatingCops = true
     for _, v in pairs(players) do
         if v and v.PlayerData.job.type == 'leo' and v.PlayerData.job.onduty then
-            amount += 1
+            amount = amount + 1
         end
     end
     TriggerClientEvent('police:SetCopCount', -1, amount)

@@ -99,7 +99,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
 
 	if DoesEntityExist(canteen_ped) or DoesEntityExist(freedom_ped) then return end
 
-	local pedModel = `s_m_m_armoured_01`
+	local pedModel = "s_m_m_armoured_01"
 
 	RequestModel(pedModel)
 	while not HasModelLoaded(pedModel) do
@@ -169,7 +169,7 @@ AddEventHandler('onResourceStart', function(resource)
 
 	if DoesEntityExist(canteen_ped) or DoesEntityExist(freedom_ped) then return end
 
-	local pedModel = `s_m_m_armoured_01`
+	local pedModel = "s_m_m_armoured_01"
 
 	RequestModel(pedModel)
 	while not HasModelLoaded(pedModel) do
@@ -257,7 +257,7 @@ RegisterNetEvent('prison:client:Enter', function(time)
 	local i = 1
 	for k in pairs(Config.Locations.jobs) do
 		tempJobs[i] = k
-		i += 1
+		i = i + 1
 	end
 	currentJob = tempJobs[math.random(1, #tempJobs)]
 	CreateJobBlip(true)
@@ -354,7 +354,7 @@ CreateThread(function()
 			Wait(1000 * 60)
 			sleep = 0
 			if jailTime > 0 and inJail then
-				jailTime -= 1
+				jailTime = jailTime - 1
 				if jailTime <= 0 then
 					jailTime = 0
 					QBCore.Functions.Notify(Lang:t("success.timesup"), "success", 10000)

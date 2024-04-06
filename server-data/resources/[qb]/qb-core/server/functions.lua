@@ -143,7 +143,7 @@ function QBCore.Functions.GetPlayersOnDuty(job)
         if Player.PlayerData.job.name == job then
             if Player.PlayerData.job.onduty then
                 players[#players + 1] = src
-                count += 1
+                count = count + 1
             end
         end
     end
@@ -158,7 +158,7 @@ function QBCore.Functions.GetDutyCount(job)
     for _, Player in pairs(QBCore.Players) do
         if Player.PlayerData.job.name == job then
             if Player.PlayerData.job.onduty then
-                count += 1
+                count = count + 1
             end
         end
     end
@@ -275,7 +275,7 @@ function QBCore.Functions.CreateAutomobile(source, model, coords, warp)
     model = type(model) == 'string' and joaat(model) or model
     if not coords then coords = GetEntityCoords(GetPlayerPed(source)) end
     local heading = coords.w and coords.w or 0.0
-    local CreateAutomobile = `CREATE_AUTOMOBILE`
+    local CreateAutomobile = "CREATE_AUTOMOBILE"
     local veh = Citizen.InvokeNative(CreateAutomobile, model, coords, heading, true, true)
     while not DoesEntityExist(veh) do Wait(0) end
     if warp then TaskWarpPedIntoVehicle(GetPlayerPed(source), veh, -1) end

@@ -251,7 +251,7 @@ local function EquipWeaponTint(source, tintIndex, item, isMK2)
     local ped = GetPlayerPed(source)
     local selectedWeaponHash = GetSelectedPedWeapon(ped)
 
-    if selectedWeaponHash == `WEAPON_UNARMED` then
+    if selectedWeaponHash == "WEAPON_UNARMED" then
         TriggerClientEvent('QBCore:Notify', source, 'You have no weapon selected.', 'error')
         return
     end
@@ -314,7 +314,7 @@ local function EquipWeaponAttachment(src, item)
     local shouldRemove = false
     local ped = GetPlayerPed(src)
     local selectedWeaponHash = GetSelectedPedWeapon(ped)
-    if selectedWeaponHash == `WEAPON_UNARMED` then return end
+    if selectedWeaponHash == "WEAPON_UNARMED" then return end
     local weaponName = QBCore.Shared.Weapons[selectedWeaponHash].name
     if not weaponName then return end
     local attachmentComponent = DoesWeaponTakeWeaponComponent(item, weaponName)

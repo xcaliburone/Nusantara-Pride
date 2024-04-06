@@ -226,12 +226,12 @@ RegisterNetEvent('AttackTransport:Pozwolwykonac', function()
 			local distance = #(coords - vector3(VehicleCoords.x, VehicleCoords.y, VehicleCoords.z))
 			if distance < 200 then
 				spawned = true
-				RequestModel(`stockade`)
-				while not HasModelLoaded(`stockade`) do
+				RequestModel("stockade")
+				while not HasModelLoaded("stockade") do
 					Wait(0)
 				end
 				ClearAreaOfVehicles(VehicleCoords.x, VehicleCoords.y, VehicleCoords.z, 15.0, false, false, false, false, false)
-				transport = CreateVehicle(`stockade`, VehicleCoords.x, VehicleCoords.y, VehicleCoords.z, 52.0, true, true)
+				transport = CreateVehicle("stockade", VehicleCoords.x, VehicleCoords.y, VehicleCoords.z, 52.0, true, true)
 				SetEntityAsMissionEntity(transport)
 				TruckBlip = AddBlipForEntity(transport)
 				SetBlipSprite(TruckBlip, 57)
@@ -298,20 +298,20 @@ function stopAndBeAngry()
 		GiveWeaponToPed(pilot, Config.DriverWeap, 420, 0, 1)
 
 		SetPedDropsWeaponsWhenDead(navigator,false)
-		SetPedRelationshipGroupDefaultHash(navigator,`COP`)
-		SetPedRelationshipGroupHash(navigator,`COP`)
+		SetPedRelationshipGroupDefaultHash(navigator,"COP")
+		SetPedRelationshipGroupHash(navigator,"COP")
 		SetPedAsCop(navigator,true)
 		SetCanAttackFriendly(navigator,false,true)
 
 		SetPedDropsWeaponsWhenDead(navigator2,false)
-		SetPedRelationshipGroupDefaultHash(navigator2,`COP`)
-		SetPedRelationshipGroupHash(navigator2,`COP`)
+		SetPedRelationshipGroupDefaultHash(navigator2,"COP")
+		SetPedRelationshipGroupHash(navigator2,"COP")
 		SetPedAsCop(navigator2,true)
 		SetCanAttackFriendly(navigator2,false,true)
 
 		SetPedDropsWeaponsWhenDead(pilot,false)
-		SetPedRelationshipGroupDefaultHash(pilot,`COP`)
-		SetPedRelationshipGroupHash(pilot,`COP`)
+		SetPedRelationshipGroupDefaultHash(pilot,"COP")
+		SetPedRelationshipGroupHash(pilot,"COP")
 		SetPedAsCop(pilot,true)
 		SetCanAttackFriendly(pilot,false,true)
 
@@ -372,9 +372,9 @@ function CheckVehicleInformation()
 					Wait(50)
 				end
 				local x,y,z = table.unpack(GetEntityCoords(PlayerPedId()))
-				prop = CreateObject(`prop_c4_final_green`, x, y, z+0.2,  true,  true, true)
+				prop = CreateObject("prop_c4_final_green", x, y, z+0.2,  true,  true, true)
 				AttachEntityToEntity(prop, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 60309), 0.06, 0.0, 0.06, 90.0, 0.0, 0.0, true, true, false, true, 1, true)
-				SetCurrentPedWeapon(PlayerPedId(), `WEAPON_UNARMED`,true)
+				SetCurrentPedWeapon(PlayerPedId(), "WEAPON_UNARMED",true)
 				FreezeEntityPosition(PlayerPedId(), true)
 				TaskPlayAnim(PlayerPedId(), 'anim@heists@ornate_bank@thermal_charge_heels', "thermal_charge", 3.0, -8, -1, 63, 0, 0, 0, 0 )
 				Wait(5500)
@@ -450,7 +450,7 @@ function TakingMoney()
     end
 
 	local PedCoords = GetEntityCoords(PlayerPedId())
-	bag = CreateObject(`prop_cs_heist_bag_02`,PedCoords.x, PedCoords.y,PedCoords.z, true, true, true)
+	bag = CreateObject("prop_cs_heist_bag_02",PedCoords.x, PedCoords.y,PedCoords.z, true, true, true)
 	AttachEntityToEntity(bag, PlayerPedId(), GetPedBoneIndex(PlayerPedId(), 57005), 0.0, 0.0, -0.16, 250.0, -30.0, 0.0, false, false, false, false, 2, true)
 	TaskPlayAnim(PlayerPedId(), "anim@heists@ornate_bank@grab_cash_heels", "grab", 8.0, -8.0, -1, 1, 0, false, false, false)
 	FreezeEntityPosition(PlayerPedId(), true)

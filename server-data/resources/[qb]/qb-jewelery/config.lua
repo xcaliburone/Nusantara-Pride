@@ -11,40 +11,40 @@ Config.JewelleryLocation = {
 }
 
 Config.WhitelistedWeapons = {
-    [`weapon_assaultrifle`] = {
+    ["weapon_assaultrifle"] = {
         ['timeOut'] = 10000
     },
-    [`weapon_carbinerifle`] = {
+    ["weapon_carbinerifle"] = {
         ['timeOut'] = 10000
     },
-    [`weapon_pumpshotgun`] = {
+    ["weapon_pumpshotgun"] = {
         ['timeOut'] = 10000
     },
-    [`weapon_sawnoffshotgun`] = {
+    ["weapon_sawnoffshotgun"] = {
         ['timeOut'] = 10000
     },
-    [`weapon_compactrifle`] = {
+    ["weapon_compactrifle"] = {
         ['timeOut'] = 10000
     },
-    [`weapon_microsmg`] = {
+    ["weapon_microsmg"] = {
         ['timeOut'] = 10000
     },
-    [`weapon_autoshotgun`] = {
+    ["weapon_autoshotgun"] = {
         ['timeOut'] = 10000
     },
-    [`weapon_pistol`] = {
+    ["weapon_pistol"] = {
         ['timeOut'] = 10000
     },
-    [`weapon_pistol_mk2`] = {
+    ["weapon_pistol_mk2"] = {
         ['timeOut'] = 10000
     },
-    [`weapon_combatpistol`] = {
+    ["weapon_combatpistol"] = {
         ['timeOut'] = 10000
     },
-    [`weapon_appistol`] = {
+    ["weapon_appistol"] = {
         ['timeOut'] = 10000
     },
-    [`weapon_pistol50`] = {
+    ["weapon_pistol50"] = {
         ['timeOut'] = 10000
     },
 }

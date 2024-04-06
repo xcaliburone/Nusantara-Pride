@@ -7,10 +7,10 @@ QBCore.Functions.CreateCallback('qb-scoreboard:server:GetScoreboardData', functi
 
     for _, v in pairs(QBCore.Functions.GetQBPlayers()) do
         if v then
-            totalPlayers += 1
+            totalPlayers = totalPlayers + 1
 
             if v.PlayerData.job.name == "police" and v.PlayerData.job.onduty then
-                policeCount += 1
+                policeCount = policeCount + 1
             end
 
             players[v.PlayerData.source] = {}

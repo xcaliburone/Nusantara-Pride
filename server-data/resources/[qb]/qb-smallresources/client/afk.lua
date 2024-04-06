@@ -55,7 +55,7 @@ CreateThread(function()
                                 elseif _type == 'seconds' then
                                     QBCore.Functions.Notify(Lang:t('afk.will_kick') .. time .. Lang:t('afk.time_seconds'), 'error', 10000)
                                 end
-                                time -= 10
+                                time = time - 10
                             else
                                 TriggerServerEvent('KickForAFK')
                             end

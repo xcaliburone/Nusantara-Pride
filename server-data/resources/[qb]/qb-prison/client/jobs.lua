@@ -32,7 +32,7 @@ local function CheckAllLocations()
     for i = 1, #Config.Locations.jobs[currentJob] do
         local current = Config.Locations.jobs[currentJob][i]
         if current.done then
-            amount += 1
+            amount = amount + 1
         end
     end
     return amount == #Config.Locations.jobs[currentJob]
@@ -52,7 +52,7 @@ local function JobDone()
     if not Config.Locations.jobs[currentJob][currentLocation].done then return end
     if math.random(1, 100) <= 50 then
         QBCore.Functions.Notify(Lang:t("success.time_cut"))
-        jailTime -= math.random(1, 2)
+        jailTime = jailTime - math.random(1, 2)
     end
     if CheckAllLocations() then ResetLocations() end
     local newLocation = math.random(1, #Config.Locations.jobs[currentJob])

@@ -25,12 +25,12 @@ local StatusList = {
 }
 
 local WhitelistedWeapons = {
-    `weapon_unarmed`,
-    `weapon_snowball`,
-    `weapon_stungun`,
-    `weapon_petrolcan`,
-    `weapon_hazardcan`,
-    `weapon_fireextinguisher`
+    "weapon_unarmed",
+    "weapon_snowball",
+    "weapon_stungun",
+    "weapon_petrolcan",
+    "weapon_hazardcan",
+    "weapon_fireextinguisher"
 }
 
 -- Functions
@@ -315,7 +315,7 @@ CreateThread(function()
         Wait(10)
         if LocalPlayer.state.isLoggedIn then
             if PlayerJob.type == 'leo' and PlayerJob.onduty then
-                if IsPlayerFreeAiming(PlayerId()) and GetSelectedPedWeapon(PlayerPedId()) == `WEAPON_FLASHLIGHT` then
+                if IsPlayerFreeAiming(PlayerId()) and GetSelectedPedWeapon(PlayerPedId()) == "WEAPON_FLASHLIGHT" then
                     if next(Casings) then
                         local pos = GetEntityCoords(PlayerPedId(), true)
                         for k, v in pairs(Casings) do

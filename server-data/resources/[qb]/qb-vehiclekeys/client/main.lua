@@ -121,7 +121,7 @@ local function robKeyLoop()
                         end
                     end
                 end
-                if entering == 0 and not IsPedInAnyVehicle(ped, false) and GetSelectedPedWeapon(ped) == `WEAPON_UNARMED` then
+                if entering == 0 and not IsPedInAnyVehicle(ped, false) and GetSelectedPedWeapon(ped) == "WEAPON_UNARMED" then
                     looped = false
                     break
                 end
