@@ -286,8 +286,8 @@ RegisterNetEvent('qb-diving:client:UseGear', function()
                 QBCore.Functions.Progressbar("equip_gear", Lang:t("info.put_suit"), 5000, false, true, {}, {}, {}, {},
                     function() -- Done
                         deleteGear()
-                        local maskModel = `p_d_scuba_mask_s`
-                        local tankModel = `p_s_scuba_tank_s`
+                        local maskModel = "p_d_scuba_mask_s"
+                        local tankModel = "p_s_scuba_tank_s"
                         RequestModel(tankModel)
                         while not HasModelLoaded(tankModel) do
                             Wait(0)
